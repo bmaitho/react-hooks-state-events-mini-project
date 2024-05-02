@@ -8,12 +8,13 @@ console.log("Here's the data you're working with");
 console.log({ CATEGORIES, TASKS });
 
 function App() {
+  const {display,setDisplay}=useState(TASKS);
   return (
     <div className="App">
       <h2>My tasks</h2>
-      <CategoryFilter />
+      <CategoryFilter Categories={CATEGORIES }setDisplay={setDisplay} display={display}/>
       <NewTaskForm />
-      <TaskList />
+      <TaskList Tasks={TASKS} display={display}setDisplay={setDisplay}     />
     </div>
   );
 }
